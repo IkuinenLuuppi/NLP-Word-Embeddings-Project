@@ -1,0 +1,13 @@
+Corrections/comments? 
+What points should I add/modify? 
+Remarks on the style (too formal)? 
+I expect brutal honesty (as always). 
+The text is quite short. I’ll write more when I understand more and when “we” have progressed.
+
+Word embeddings project
+The aim of this project is to train and test different word2vec models and further evaluate and compare them with each other. An existing word2vec model by Tomas Mikolov is used as a base from which different word2vec models are created by varying the parameters, such as the size of the word context window. 
+The evaluation of these models is done first manually by checking the nearest neighbors of selected words. Then the models are tested and evaluated formally on existing web based evaluation scripts (?) and finally ranked according to their accuracy.
+Preparing the data
+As data, we decided to use the IMDB and the Reuters datasets, which are practical since they were already read in (?) and used during the lectures. In order to get the files in a usable form, the data is first shuffled to avoid distortion of the results and then tokenized. In the tokenization, which includes preprocessing (i.e., eliminating the punctuation, etc.), we use sklearn and numpy libraries.
+Parameters
+After the data is modified to the desired form, the training parameters are set using Mikolov’s word2vec model’s default settings as a starting point. Some parameters are left untouched, for example the initialization of the weights is left to its original state: alpha (?), whereas three parameters are changed: Window sizes 3, 5, 7 and 9 are chosen to allow us to examine the effect of the word context on the embeddings. As for the architecture, we use the Continuous Bag of Words (CBOW) model, which learns to predict the target word for a given context, and the Skip-Gram model, which, on the contrary, learns to predict the nearby words of a given word. Finally, two different corpora (IMDB and Reuters) are also alternated resulting in 16 different models, which are then ready to be tested and evaluated. 
